@@ -2,6 +2,7 @@ const LocalStorage = function() {
     const setLoggedInUserData = (user, token,role) => {
         localStorage.setItem('loggedInUserData', JSON.stringify({ user: user, token: token ,role:role}));
     }
+    
     const removeLoggedInUserData = () => {
         localStorage.removeItem('loggedInUserData');
     }

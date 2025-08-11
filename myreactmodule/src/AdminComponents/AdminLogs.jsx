@@ -1,7 +1,7 @@
-import { Table, TableRow, TableCell, Label,FlexBox, Button,TableHeaderRow, TableHeaderCell,TableGrowing, Panel, Toolbar, Title, ToolbarSpacer, Icon, Toast, FilterBar, FilterItem, FilterGroupItem, Input, DateRangePicker } from '@ui5/webcomponents-react';
+import { Table, TableRow, TableCell, Label,FlexBox, Button,TableHeaderRow, TableHeaderCell,TableGrowing, Panel,  Title, Toast, FilterBar, FilterGroupItem, Input, DateRangePicker } from '@ui5/webcomponents-react';
 import { useEffect, useRef, useState } from 'react';
-import { TableColumn } from '@ui5/webcomponents-react-compat';
-import navigationRightArrow from "@ui5/webcomponents-icons/dist/navigation-right-arrow";
+// import { TableColumn } from '@ui5/webcomponents-react-compat';
+// import navigationRightArrow from "@ui5/webcomponents-icons/dist/navigation-right-arrow";
 import { useNavigate } from 'react-router-dom';
 import { LocalStorage } from "../Data/LocalStorage";
 const _myLocalStorageUtility = LocalStorage();
@@ -14,7 +14,7 @@ const baseURL = "MyDataprovider";
 
 
 function AdminLogs() {
-    const [selectedRows, setSelectedRows] = useState([]);
+    // const [selectedRows, setSelectedRows] = useState([]);
     const [logs, setLogs] = useState([]);
     const [skip, setSkip] = useState(0);
     const [limit, setLimit] = useState(1000);

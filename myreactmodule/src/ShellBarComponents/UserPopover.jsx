@@ -1,5 +1,5 @@
-import { Avatar, ShellBar, ShellBarItem, ResponsivePopover, Title, List, ListItemStandard, ListItemCustom, Button, Panel, ListItemGroup } from "@ui5/webcomponents-react";
-import { useState } from "react";
+import {  ResponsivePopover, Title, List, ListItemStandard, ListItemCustom, Button, ListItemGroup } from "@ui5/webcomponents-react";
+//import { useState } from "react";
 import { socket } from '../socket';
 import OnlineStatusIcon from "../LoginComponents/OnlineStatusIcon";
 import { useNavigate } from "react-router-dom";

@@ -1,4 +1,4 @@
-import { Bar, Form, Label, Input, TextArea, Icon, Title, Button, Text, FormItem, RatingIndicator, FormGroup, Page, Toast } from "@ui5/webcomponents-react";
+import { Bar, Form, Label, Input, TextArea,  Button, Text, FormItem, RatingIndicator, FormGroup, Page, Toast } from "@ui5/webcomponents-react";
 import React, { useContext, useRef, useState } from "react";
 import "@ui5/webcomponents/dist/features/InputSuggestions";
 import { render, createPortal } from 'react-dom';
@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { LocalStorage } from "../Data/LocalStorage";
 const _myLocalStorageUtility = LocalStorage();
 
-const baseURL = process.env.REACT_APP_SERVER_URI;
+//const baseURL = process.env.REACT_APP_SERVER_URI;
 function EditProducts() {
   
     const navigate = useNavigate();

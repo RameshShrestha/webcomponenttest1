@@ -1,6 +1,6 @@
 import { Bar, Dialog, Icon, Title, Button, Text, FormItem, RatingIndicator, FormGroup,Label } from "@ui5/webcomponents-react";
 import { Form } from "@ui5/webcomponents-react";
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import SimpleImageSlider from "react-simple-image-slider";
 
 function ProductDetailDialog({ openState, data, setOpenState }) {

@@ -1,9 +1,9 @@
-import { FlexibleColumnLayout, ListItemStandard, List, Text, Title, Button,   TextArea, Input } from '@ui5/webcomponents-react';
+import { FlexibleColumnLayout, ListItemStandard, List, Text, Title, Button, Input } from '@ui5/webcomponents-react';
 import { useEffect, useState } from 'react';
 import { LocalStorage } from '../Data/LocalStorage';
 const _myLocalStorageUtility = LocalStorage();
 const baseURL ="MyDataprovider" ;
-const baseURL2 = process.env.REACT_APP_SERVER_URI;
+//const baseURL2 = process.env.REACT_APP_SERVER_URI;
 function AdminMessageBox() {
   const [messages, setMessages] = useState([]);
   const [selectedMail, setSelectedMail] = useState({

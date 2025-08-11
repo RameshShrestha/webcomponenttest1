@@ -181,7 +181,7 @@ function CountryDetailPage({ country, countryName }) {
             <>
                 <div style={{ display: "flex", justifyContent: "space-between", height: "60px", background: "var(--sapContent_Illustrative_Color1)", color: "white" }}>
                     <h1 style={{ marginLeft: "10px", marginTop:"0px", marginBottom:"0px" }}> {country.Country} ( {countryDetail.CapitalCity} )</h1>
-                    <img src={countryDetail.flag} style={{ marginRight: "10px", borderRadius: "10px" }} />
+                    <img alt="countryflag" src={countryDetail.flag} style={{ marginRight: "10px", borderRadius: "10px" }} />
                 </div>
                  <Form
                     backgroundDesign="Solid"

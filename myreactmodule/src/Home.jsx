@@ -12,9 +12,9 @@ import {
   ListItemStandard,
   Text,
 } from "@ui5/webcomponents-react";
-import { BarChart, DonutChart, LineChart } from "@ui5/webcomponents-react-charts";
-import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
-import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+import {  DonutChart } from "@ui5/webcomponents-react-charts";
+// import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
+// import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
 import listIcon from "@ui5/webcomponents-icons/dist/list.js";
 import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
 import { useNavigate } from "react-router-dom";
@@ -26,36 +26,36 @@ import WeatherCard from "./WeatherPage/WeatherCard";
 import UserLocationContextProvider from "./Data/ContextHandler/UserLocationContext";
 //import { UserLocationContext } from "./Data/ContextHandler/UserLocationContext";
 const _myLocalStorageUtility = LocalStorage();
-const dataset = [
-  {
-    month: "January",
-    data: 65,
-  },
-  {
-    month: "February",
-    data: 59,
-  },
-  {
-    month: "March",
-    data: 80,
-  },
-  {
-    month: "April",
-    data: 81,
-  },
-  {
-    month: "May",
-    data: 56,
-  },
-  {
-    month: "June",
-    data: 55,
-  },
-  {
-    month: "July",
-    data: 40,
-  },
-];
+// const dataset = [
+//   {
+//     month: "January",
+//     data: 65,
+//   },
+//   {
+//     month: "February",
+//     data: 59,
+//   },
+//   {
+//     month: "March",
+//     data: 80,
+//   },
+//   {
+//     month: "April",
+//     data: 81,
+//   },
+//   {
+//     month: "May",
+//     data: 56,
+//   },
+//   {
+//     month: "June",
+//     data: 55,
+//   },
+//   {
+//     month: "July",
+//     data: 40,
+//   },
+// ];
 
 // const tableData = new Array(500).fill(null).map((_, index) => {
 //   return {
@@ -103,7 +103,7 @@ const productTableColumns = [
     accessor: "description",
     width: "240",
     Cell: (instance) => {
-      const { cell, row, data, webComponentsReactProperties } = instance;
+      const {  row} = instance;
       // console.log("row", row);
       //  console.log(data[row.index]);
       //console.log(data[row]);
@@ -120,8 +120,8 @@ const productTableColumns = [
   },
    { 
      Cell: (instance) => {
-       const { cell, row, data, webComponentsReactProperties } = instance;
-       const isOverlay = webComponentsReactProperties.showOverlay;
+       const {  webComponentsReactProperties } = instance;
+      // const isOverlay = webComponentsReactProperties.showOverlay;
        return (
         <FlexBox>
           {/* <img src={instance.data[row.index]?.thumbnail} width="50px" height="50px" /> */}
@@ -143,7 +143,7 @@ export default function Home() {
   const [toDoList, setToDoList] = useState([]);
   const [usersStatus, setUsersStatus] = useState([]);
   const { contextData } = useAuth();
-  const { token, user, role, settingConfig, userDetail } = contextData;
+  const { role, settingConfig, userDetail } = contextData;
   //console.log("userDetail", userDetail);
   // const { location,locationPermission } = useContext(UserLocationContext);
   // console.log("location : ",location, "locationPermission : ",locationPermission);

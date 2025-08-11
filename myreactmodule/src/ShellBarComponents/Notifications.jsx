@@ -1,4 +1,4 @@
-import { Toast, ShellBar, ShellBarItem, ResponsivePopover, Title, List, ListItemStandard, ListItemCustom, Button } from "@ui5/webcomponents-react";
+import { Toast,  ResponsivePopover } from "@ui5/webcomponents-react";
 import MyNotificationItem from "./MyNotificationItem";
 import { useEffect, useRef, useState } from "react";
 import { socket } from '../socket';

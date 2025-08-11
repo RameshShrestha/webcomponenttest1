@@ -1,4 +1,4 @@
-import { Bar, Button, Dialog, Icon, Title } from "@ui5/webcomponents-react";
+import {  Dialog, Icon } from "@ui5/webcomponents-react";
 import { useEffect, useRef, useState } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
 function ImageListMainPage() {
@@ -110,7 +110,7 @@ function ImageListMainPage() {
                                 dialogRef.current.open=true;
 
                             }}>
-                                <img src={imageData.download_url + ".webp"} alt="Image" height={"250px"} width={"250px"} />
+                                <img src={imageData.download_url + ".webp"} alt="testimage" height={"250px"} width={"250px"} />
                             </div>
                             <div style={{ position: "absolute", bottom: "8px", left: "16px", color: "white",background:"#00000070" }}> By : {imageData.author}</div>
                         </div>

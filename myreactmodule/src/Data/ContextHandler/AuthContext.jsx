@@ -7,11 +7,11 @@ import Loader from "../../LoginComponents/Loader";
 import { LocalStorage } from "../LocalStorage";
 const _myLocalStorageUtility = LocalStorage();
 // Create a context to manage authentication-related data and functions
-const validDummyUsers = [{ username: "Ramesh", "password": "Ramesh" },
-{ username: "Shrestha", "password": "Shrestha" },
-{ username: "Guest", "password": "Guest" },
-{ username: "User1", "password": "User1" },
-{ username: "User2", "password": "User2" }];
+// const validDummyUsers = [{ username: "Ramesh", "password": "Ramesh" },
+// { username: "Shrestha", "password": "Shrestha" },
+// { username: "Guest", "password": "Guest" },
+// { username: "User1", "password": "User1" },
+// { username: "User2", "password": "User2" }];
 
 const AuthContext = createContext({
   contextData: {
@@ -130,8 +130,6 @@ const AuthProvider = ({ children }) => {
           loadLoggedInUserDetail(result.user.username);
           //navigate("/home");
         }
-        return result;
-
         return result;
       } catch (e) {
         console.log(e);

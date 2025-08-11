@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { HashRouter } from "react-router-dom";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import LoginPage from './LoginComponents/LoginPage';
-import RegisterPage from './LoginComponents/RegisterPage';
+// import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+// import LoginPage from './LoginComponents/LoginPage';
+// import RegisterPage from './LoginComponents/RegisterPage';
 import { useAuth, AuthContext, AuthProvider } from './Data/ContextHandler/AuthContext';
 //import { ThemeProvider } from '@ui5/webcomponents-react';
 

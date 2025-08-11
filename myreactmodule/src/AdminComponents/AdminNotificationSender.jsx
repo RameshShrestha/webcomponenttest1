@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { socket } from '../socket';
-import { TextArea, Input, Select, Option, Text, Button,Toast } from "@ui5/webcomponents-react";
+import { TextArea, Input, Select, Option,  Button,Toast } from "@ui5/webcomponents-react";
 import { render, createPortal } from 'react-dom';
 function AdminNotificationSender() {
 

@@ -1,0 +1,526 @@
+
+@import "../node_modules/ol/ol.css";
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.ui5-shellbar-root {
+  background: red;
+}
+
+
+.rsis-image {
+  background-size: contain !important;
+}
+
+.wrappText {
+  text-wrap: wrap;
+}
+
+.userCard {
+
+  border: solid #4a5798;
+  width: 320px;
+  min-height: 200px;
+  border-radius: 20px;
+  margin: 5px;
+  overflow: hidden;
+  background: #4a5798;
+}
+
+.cardHeader {
+  background: #4a5798;
+  color: white;
+  font-size: 25px;
+  min-height: 30px;
+  margin-left: 10px;
+}
+
+.cardHeader:hover {
+  background: #262c4d;
+  color: white;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.cardFooter {
+  background-color: #4a5798;
+  color: white;
+  padding-left: 15px;
+  height: 40px;
+}
+
+.userPic {
+  border: solid #3a3d41;
+  border-radius: 50px;
+  margin: 3px;
+  margin-top: 20px;
+}
+
+.userloadedMsg {
+  text-align: center;
+  width: 100%;
+  background: #959ccb;
+  font-size: 20px;
+  height: 30px;
+  color: green;
+}
+
+.pageFooter {
+  display: flex;
+  bottom: 0px;
+  right: 0;
+  margin-right: 25px;
+  justify-content: flex-end;
+  height: 50px;
+  z-index: 100;
+  position: fixed;
+}
+
+.chatButton {
+  width: 100%;
+  color: rebeccapurple;
+  font-size: 25px;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+}
+
+.chatBoxContainer {
+  justify-content: flex-end;
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.chatCountBtn {
+  border: none;
+  border-radius: 20px;
+}
+
+.is-invisible {
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  height: 0px;
+}
+
+.is-visible {
+  transition: 0.3s;
+  opacity: 1;
+  visibility: visible;
+  max-height: 400px;
+}
+
+.onlineStatus {
+  color: green !important;
+}
+
+.mainLoginScreen {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  overflow: hidden auto;
+  padding: 30px;
+  height: 80vh;
+}
+.mainRegisterScreen {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  overflow: hidden auto;
+  padding-top: 30px;
+  height: 85vh;
+}
+.loginComponents {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+  min-width: 350px;
+  border: solid 1px #3e4a3e8c;
+  border-radius: 50px;
+  padding: 20px;
+  background: #dbcccc;
+}
+
+.loginInput {
+  width: 100%;
+  outline: aquamarine;
+  height: 40px;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  border: solid 2px #8b8e92;
+  outline-color: #a1a1aa;
+  margin: 10px;
+  max-width: 350px;
+  background: #343232;
+  color: white;
+}
+
+.loginInput::placeholder {
+  color: #8b8e92;
+}
+
+.loginButton {
+  width: 100%;
+  border: none;
+  height: 40px;
+  background: #474d80;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 50px;
+  color: white;
+  max-width: 350px;
+  margin-top: 5px;
+}
+
+.loginButton:hover {
+  background: #404574;
+  text-decoration: underline;
+}
+
+.loginButton[disabled] {
+  background: #4a3d3d;
+}
+
+.loginLink {
+  color: #2121b0;
+  font-weight: bold;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+/* Welcome Screen */
+
+.HeaderWS {
+  display: flex;
+  position: relative;
+  height: 50px;
+  width: 100%;
+ 
+  background-color: var(--sapBrandColor);
+  align-items: center;
+}
+
+.MainWS {
+  text-align: center;
+  position: relative;
+  height: 84vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+/* Now set the height of your Footer equal to the padding that you left for it in your #root.  To make it stay at the bottom, you will set it to be absolutely positioned.  If Main grows larger, your Footer will move down to remain at the bottom of the page. */
+.FooterWS {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  background: #000;
+  color: white;
+}
+
+.navigation-menu {
+  margin-left: auto;
+  margin-right: 10px;
+  height: 100%;
+}
+
+/* navbar.css */
+.navigation-menu ul {
+  display: flex;
+  padding: 0;
+}
+
+.navigation-menu li {
+  /* // removes default disc bullet for li tags and applies margin to left & right side */
+  list-style-type: none;
+  margin: 0 0rem;
+}
+
+.navigation-menu li a {
+  /* // increases the surface area of the anchor tag to span more than just the anchor text */
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.brand-name {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+
+.hamburger {
+  /* // removes default border on button element */
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #283b8b;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  /* // positions the icon to the right and center aligns it vertically */
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamburger:hover {
+  background-color: #2642af;
+}
+
+@media screen and (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navigation-menu ul {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navigation-menu ul {
+    /* // navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar) */
+    position: absolute;
+    z-index: 10;
+    top: 34px;
+    right: 0;
+    /* // stacks the li tags vertically  */
+    flex-direction: column;
+    /* // makes menu span full height and width */
+    width: 100%;
+    height: calc(100vh - 77px);
+    background-color: white;
+    border-top: 1px solid black;
+
+  }
+
+  .navigation-menu li {
+    /* // centers link text and strips off margin */
+    text-align: start;
+    margin: 0;
+    padding: 3px;
+  }
+
+  .navigation-menu li a {
+    color: black;
+    /* // increases the surface area of the anchor tag to span the full width of the menu */
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+
+  /* .navigation-menu li:hover {
+    background-color: #5c2121;
+  } */
+}
+
+@media screen and (max-width: 600px) {
+  .navigation-menu ul {
+    /* previous styles */
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navigation-menu.expanded ul {
+    display: block;
+    background: var(--sapAccentBackgroundColor5);
+    height: 300px;
+    width: 150px;
+
+  }
+}
+
+.joinButtonWS {
+  font-size: 15px;
+  margin: 0px 3px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.loginButtonWS {
+  font-size: 15px;
+  margin: 0px 3px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.loginButtonWS:hover {
+  background: green;
+}
+
+.joinButtonWS:hover {
+  background: green;
+}
+
+.IconsWS {
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.IconsWS:hover {
+  background: green;
+
+}
+
+.flexLeft {
+  flex: 40%;
+}
+
+.flexRight {
+  flex: 60%;
+}
+
+@media screen and (max-width: 758px) {
+  .FirstSection {
+    flex-wrap: wrap;
+  }
+
+}
+
+.loaderClass {
+  height: 100px;
+  width: 100px;
+}
+
+.notificationItem {
+  width: 100%;
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+  display: flex;
+  min-height: 60px
+}
+
+.noNotificationItem {
+  width: 100%;
+  background: #5d540c;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  height: 40px;
+}
+
+.userMessage {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.senderMessage {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chatMessage {
+  margin: 3px;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.chatMessageText {
+  background: #4ead4e;
+  color: white;
+  border-radius: 10px;
+  padding: 4px;
+  max-width: 80%;
+}
+
+.chatInputContainer {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  display: flex;
+  background: white;
+  align-items: center;
+}
+.chatInput{
+  height: 36px;
+  width: 260px;
+  border: none;
+
+}
+.blinkDiv {
+  animation: blinker 2s linear infinite;
+ 
+}
+@keyframes blinker {
+  50% {
+    background: rgb(179, 95, 27);
+  }
+}
+.contactRow{
+  display: flex;
+}
+.contactContainer{
+  height: 87vh;
+  
+}
+.contactContainer h1{
+background: #483604;
+    margin: 0px;
+    padding-left: 10px;
+    color: white;
+}
+.contactContainer label{
+  width: 120px;
+  font-weight: bold;
+  color: #1f234e;
+  margin-left: 10px;
+}
+.contactContainer span{
+  margin : 0 5px;
+}
+.removeStroke{
+  stroke: none;
+}
+.imageDialog::part(content){
+padding: 0px;
+}
+.unprotectedContainer{
+  display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+    overflow: auto;
+    background: var(--sapBackgroundColor);
+}
+

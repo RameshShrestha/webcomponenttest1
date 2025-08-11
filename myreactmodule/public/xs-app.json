@@ -1,0 +1,34 @@
+{
+  "welcomeFile": "/index.html",
+  "authenticationMethod": "none",
+  "websockets": {
+    "enabled": true
+  },
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+
+  "routes": [
+    {
+      "authenticationType": "none",
+      "csrfProtection": false,
+      "source": "^/northwind_fullpath/(.*)$",
+      "destination": "northwind_fullpath",
+      "target": "$1"
+    },
+    {
+      "authenticationType": "none",
+      "csrfProtection": false,
+      "source": "^/MyDataprovider/(.*)$",
+      "destination": "MyDataprovider",
+      "target": "$1"
+    },
+    
+    {
+      "source": "^(.*)$",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}

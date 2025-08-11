@@ -1,0 +1,80 @@
+_schema-version: "3.2"
+ID: webcomponenttest
+version: 1.1.1
+modules:
+- name: webcomponenttest-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: webcomponenttest-destination-service
+    parameters:
+      content-target: true
+  - name: webcomponenttest_html_repo_host
+    parameters:
+      service-key:
+        name: webcomponenttest_html_repo_host-key
+  - name: uaa_webcomponenttest
+    parameters:
+      service-key:
+        name: uaa_webcomponenttest-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: reactwebcomp_webcomponenttest_html_repo_host
+          ServiceInstanceName: webcomponenttest-html5-app-host-service
+          ServiceKeyName: webcomponenttest_html_repo_host-key
+          sap.cloud.service: reactwebcomp
+        - Authentication: OAuth2UserTokenExchange
+          Name: reactwebcomp_uaa_webcomponenttest
+          ServiceInstanceName: webcomponenttest-xsuaa-service
+          ServiceKeyName: uaa_webcomponenttest-key
+          sap.cloud.service: reactwebcomp
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: webcomponenttest_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: webcomponenttest_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - myreactmodule-content.zip
+      name: myreactmodule
+      target-path: resources/
+- name: myreactmodule
+  type: html5
+  path: myreactmodule
+  build-parameters:
+    builder: custom
+    commands:
+    - npm install
+    - npm run build
+    supported-platforms: []
+resources:
+- name: webcomponenttest-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+    service: destination
+    service-name: webcomponenttest-destination-service
+    service-plan: lite
+- name: webcomponenttest_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: webcomponenttest-html5-app-host-service
+    service-plan: app-host
+- name: uaa_webcomponenttest
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: webcomponenttest-xsuaa-service
+    service-plan: application

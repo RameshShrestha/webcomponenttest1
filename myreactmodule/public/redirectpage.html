@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page to redirect</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <script>
+         function navigate() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            console.log("Code received",code);
+            document.getElementById("codeReceived").innerHTML = code;
+            if(!code){
+                window.location.replace("https://testramesh-irhww2w9.launchpad.cfapps.us10.hana.ondemand.com/31e0dd24-5855-4bc5-8350-9612be65448d.reactwebcomp.myreactmodule-1.0.0/index.html#/login");
+            }
+            else{
+                window.location.replace("https://testramesh-irhww2w9.launchpad.cfapps.us10.hana.ondemand.com/31e0dd24-5855-4bc5-8350-9612be65448d.reactwebcomp.myreactmodule-1.0.0/index.html#/authcallback?code="+code);
+            }
+         }
+        window.onload = function() {
+            console.log("This page is just for callback url for GITHUB,as it is not accepting hashed router");
+            // Your script to run on load
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            console.log("Code received",code);
+            document.getElementById("codeReceived").innerHTML = code;
+            // if(!code){
+            //     window.location.replace("https://testramesh-irhww2w9.launchpad.cfapps.us10.hana.ondemand.com/31e0dd24-5855-4bc5-8350-9612be65448d.reactwebcomp.myreactmodule-1.0.0/index.html#/login");
+            // }
+            // else{
+            //     window.location.replace("https://testramesh-irhww2w9.launchpad.cfapps.us10.hana.ondemand.com/31e0dd24-5855-4bc5-8350-9612be65448d.reactwebcomp.myreactmodule-1.0.0/index.html#/authcallback?code="+code);
+            // }
+            console.log(urlParams);
+        };
+    </script>
+    <div>Received Code : </div>
+    <div id="codeReceived">Code</div>
+    <button onclick="navigate()">Navigate</button>
+</body>
+</html>

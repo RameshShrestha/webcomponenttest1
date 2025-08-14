@@ -334,7 +334,7 @@ export default function Home() {
               avatar={<Icon name="employee" />}
             />
           }
-          style={{ maxWidth: "340px", margin :'1rem', maxHeight:'350px' }}>
+          style={{ maxWidth: "340px", margin :'1rem', maxHeight:'400px' }}>
           <div >
             <Usercard user={userDetail} />
           </div>
@@ -349,7 +349,7 @@ export default function Home() {
                 avatar={<Icon name={tableViewIcon} />}
               />
             }
-            style={{ maxWidth: "300px", margin :'1rem', maxHeight:'350px' }}
+            style={{ maxWidth: "300px", margin :'1rem', maxHeight:'400px' }}
           >
             {/* <WeatherMainPage /> */}
             <UserLocationContextProvider><WeatherCard /></UserLocationContextProvider>
@@ -363,7 +363,7 @@ export default function Home() {
                 avatar={<Icon name="bell-2" />}
               />
             }
-            style={{ maxWidth: "500px", margin :'1rem', maxHeight:'350px' }}
+            style={{ maxWidth: "500px", margin :'1rem', maxHeight:'400px' }}
           >
             <AdminNotificationSender />
           </Card>
@@ -379,7 +379,7 @@ export default function Home() {
 
               />
             }
-            style={{ maxWidth: "500px", margin :'1rem', maxHeight:'350px' }}
+            style={{ maxWidth: "500px", margin :'1rem', maxHeight:'400px' }}
           >
             < div style={{ display: "flex", justifyContent: "center" ,height:"250px"}}>
               <Icon name="email" design="Positive" style={{ height: "100px", width: "100px" }} />
@@ -398,7 +398,7 @@ export default function Home() {
 
               />
             }
-            style={{ maxWidth: "500px", margin :'1rem', maxHeight:'350px' }}
+            style={{ maxWidth: "500px", margin :'1rem', maxHeight:'400px' }}
           >
             < div style={{ display: "flex", justifyContent: "center" ,height:"250px"}}>
               <Icon name="activity-items" design="Positive" style={{ height: "100px", width: "100px" }} />
@@ -460,7 +460,7 @@ export default function Home() {
                 onClick={handleProgressHeaderClick}
               />
             }
-            style={{ width: "300px", margin :'1rem', maxHeight:'350px' }}
+            style={{ width: "300px", margin :'1rem', maxHeight:'400px' }}
           >
             <List  growing="Scroll">
               {toDoList?.length > 0 && toDoList.map((item) => {
@@ -545,7 +545,7 @@ export default function Home() {
                 onClick={handleProductHeaderClick}
               />
             }
-            style={{ maxWidth: "500px", margin :'1rem', maxHeight:'350px' }}
+            style={{ maxWidth: "500px", margin :'1rem', maxHeight:'400px' }}
 
           >
 
@@ -581,7 +581,7 @@ export default function Home() {
                 onClick={handleUserHeaderClick}
               />
             }
-            style={{ maxWidth: "600px", margin :'1rem', maxHeight:'350px' }}
+            style={{ maxWidth: "600px", margin :'1rem', maxHeight:'400px' }}
           >
             <div style={{ display: "flex", flexDirection: "column", padding: "20px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -664,7 +664,7 @@ export default function Home() {
        <Card
   header={<CardHeader  avatar={<Icon name="chain-link" />}  titleText="Quick Links"/>}
   style={{
-    width: '300px', maxHeight:'350px',margin:'1rem'
+    width: '300px', maxHeight:'400px',margin:'1rem'
   }}
 >
   <List onItemClick={function Xs(e){
@@ -684,12 +684,23 @@ export default function Home() {
     else if (selectedItem === "Countries") {
       navigate("/countries1");
     }
+      else if (selectedItem === "News") {
+      navigate("/news1");
+    }
+    else if (selectedItem === "Manage My Questions") {
+      navigate("/managequestion");
+    }
+    else if (selectedItem === "Take Quiz") {
+      navigate("/quiz");
+    }
+
   }}>
-    <ListItemStandard text="About" />
-    <ListItemStandard text="Contact" />
+    <ListItemStandard text="News" />
     <ListItemStandard text="Images" />
     <ListItemStandard text="Useful Links" />
     <ListItemStandard text="Countries" />
+    <ListItemStandard text="Manage My Questions" />
+     <ListItemStandard text="Take Quiz" />
   </List>
 </Card>
       </FlexBox>

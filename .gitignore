@@ -146,3 +146,5 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 mta_archives/
 node_modules
+myreactmodule-content.zip
+resources/myreactmodule-content.zip

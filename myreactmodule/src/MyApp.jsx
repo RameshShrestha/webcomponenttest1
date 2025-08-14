@@ -39,6 +39,11 @@ import AllLinksContent from "./UsefulLinks/AllLinksContent";
 import AdminMessageBox from "./AdminComponents/AdminMessageBox";
 import AdminLogs from "./AdminComponents/AdminLogs";
 import Callbackpage from "LoginComponents/Callbackpage";
+import ArticleCardContainer from "RapidAPI/News/ArticleCardContainer";
+import AddQuestions from "QuizComponents/AddQuestions";
+import EditViewQuestion from "QuizComponents/EditViewQuestion";
+import ManageQuestions from "QuizComponents/ManageQuestions";
+import Quiz from "QuizComponents/Quiz";
 export default function MyApp() {
   const { contextData } = useAuth();
   const { user, settingConfig } = contextData;
@@ -78,7 +83,7 @@ export default function MyApp() {
           <Route exact path="/contact" element={<ContactPage />} />
           <Route exact path="/images" element={<ImageListMainPage />} />
           <Route exact path="/weather" element={<UserLocationContextProvider><WeatherMainPage /></UserLocationContextProvider>} />
-          <Route exact path="/news" element={<NewsPage />} />
+          <Route exact path="/news" element={<ArticleCardContainer />} />
           <Route exact path="/countries" element={<CountriesMainPage />} />
           <Route exact path="/help" element={<HelpPage />} />
            <Route path="/usefullinks" element={<UsefulLinksContextProvider><AllLinksContent/></UsefulLinksContextProvider>} /> 
@@ -110,9 +115,13 @@ export default function MyApp() {
           <Route exact path="/contact1" element={<ContactPage />} />
           <Route exact path="/images1" element={<ImageListMainPage />} />
           <Route exact path="/weather1" element={<UserLocationContextProvider><WeatherMainPage /></UserLocationContextProvider>} />
-          <Route exact path="/news1" element={<NewsPage />} />
+          <Route exact path="/news1" element={<ArticleCardContainer />} />
           <Route exact path="/countries1" element={<CountriesMainPage />} />
           <Route exact path="/help1" element={<HelpPage />} />
+          <Route exact path="/addquestion" element={<AddQuestions />} />
+          <Route exact path="/displayquestion" element={<EditViewQuestion />} />
+          <Route exact path="/managequestion" element={<ManageQuestions />} />
+          <Route exact path="/quiz" element={<Quiz />} />
           
 
           <Route path="/" element={<Navigate replace to="/home" />} /> 

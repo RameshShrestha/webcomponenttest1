@@ -1,4 +1,4 @@
-import {  ResponsivePopover, Title, List, ListItemStandard, ListItemCustom, Button, ListItemGroup } from "@ui5/webcomponents-react";
+import { ResponsivePopover, Title, List, ListItemStandard, ListItemCustom, Button, ListItemGroup } from "@ui5/webcomponents-react";
 //import { useState } from "react";
 import { socket } from '../socket';
 import OnlineStatusIcon from "../LoginComponents/OnlineStatusIcon";
@@ -33,7 +33,7 @@ function UserPopover({ isConnected, setIsConnected }) {
       <div style={{ marginTop: "1rem" }}>
 
         <List separators="None"
-         growing="Scroll"
+          growing="Scroll"
           onItemToggle={(e) => {
             console.log("Toggle Parent");
           }
@@ -49,82 +49,105 @@ function UserPopover({ isConnected, setIsConnected }) {
               console.log("sign out");
 
               await logout();
-              actionPopover.open  = false;
+              actionPopover.open = false;
             }
             else if (selectedItem === "Reset Password") {
               //Sign out trigger
               console.log("Reset Password");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/resetPassword");
 
             } else if (selectedItem === "My Profile") {
               //Sign out trigger
               console.log("My Profile");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/myprofile");
 
             } else if (selectedItem === "About") {
               //Sign out trigger
               console.log("About");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/about1");
 
             } else if (selectedItem === "Contact") {
               //Sign out trigger
               console.log("Contact");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/contact1");
 
             } else if (selectedItem === "My Todo Activity") {
               //Sign out trigger
               console.log("Contact");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/todolist");
 
             }
             else if (selectedItem === "Weathers") {
               //Sign out trigger
               console.log("Contact");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/weather1");
 
             }
             else if (selectedItem === "Images") {
               //Sign out trigger
               console.log("Images");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/images1");
 
             }
             else if (selectedItem === "Useful Links") {
               //Sign out trigger
               console.log("Useful Links");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/usefullinks1");
 
             }
             else if (selectedItem === "Settings") {
               //Sign out trigger
               console.log("Settings");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/settings");
 
             }
             else if (selectedItem === "Help") {
               //Sign out trigger
               console.log("Help");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/help1");
 
             }
             else if (selectedItem === "Countries") {
               //Sign out trigger
               console.log("Help");
-              actionPopover.open  = false;
+              actionPopover.open = false;
               navigate("/countries1");
 
             }
+            else if (selectedItem === "News") {
+              //Sign out trigger
+              console.log("Help");
+              actionPopover.open = false;
+              navigate("/news1");
+
+            }
+             else if (selectedItem === "Take Quiz") {
+              //Sign out trigger
+              console.log("Help");
+              actionPopover.open = false;
+              navigate("/quiz");
+
+            }
+             else if (selectedItem === "Manage My Questions") {
+              //Sign out trigger
+              console.log("Help");
+              actionPopover.open = false;
+              navigate("/managequestion");
+
+            }
             
+            
+
 
 
           }}>
@@ -141,7 +164,7 @@ function UserPopover({ isConnected, setIsConnected }) {
                   //     const userDummylist = ["ramesh", "test1", "Shrestha", "Rasal", "Test user2", "Test 4", "Test5", "Mills", "last user", "last 2"];
                   //        const currentUser = userDummylist[Math.floor(Math.random() * 10)]
                   socket.connect();
-                
+
                   // socket.engine.on("connection_error", (err) => {
                   //   console.log(err.req);      // the request object
                   //   console.log(err.code);     // the error code, for example 1
@@ -152,10 +175,10 @@ function UserPopover({ isConnected, setIsConnected }) {
                   socket.on("connect_error", (err) => {
                     // the reason of the error, for example "xhr poll error"
                     console.log(err.message);
-                  
+
                     // some additional description, for example the status code of the initial HTTP response
                     console.log(err.description);
-                  
+
                     // some additional context, for example the XMLHttpRequest object
                     console.log(err.context);
                   });
@@ -163,7 +186,7 @@ function UserPopover({ isConnected, setIsConnected }) {
                     "name": user,
                     "image": userDetail?.image,
                     "loginTime": new Date().toLocaleTimeString()
-                  } );
+                  });
                   console.log("Socket emit getOnline");
                   socket.emit('getOnline', {
                     "name": user,
@@ -189,6 +212,11 @@ function UserPopover({ isConnected, setIsConnected }) {
             Others
           </ListItemGroup>
           <ListItemStandard key="Usefullinks" icon="internet-browser">Useful Links</ListItemStandard>
+          <ListItemStandard key="news" icon="map-fill">News</ListItemStandard>
+
+          <ListItemStandard key="takequiz" icon="map-fill">Take Quiz</ListItemStandard>
+          <ListItemStandard key="managequestions" icon="map-fill">Manage My Questions</ListItemStandard>
+
           <ListItemStandard key="Countries" icon="map-fill">Countries</ListItemStandard>
           <ListItemStandard key="Weathers" icon="cloud">Weathers</ListItemStandard>
           <ListItemStandard key="Images" icon="image-viewer">Images</ListItemStandard>

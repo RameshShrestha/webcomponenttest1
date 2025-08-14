@@ -80,13 +80,16 @@ export default function UsefulLinksContextProvider({ children }) {
         try {
             const loggedInUser = _myLocalStorageUtility.getLoggedInUserData();
             const _token = loggedInUser?.token || "";
-            const response = await fetch(baseURL + '/usefullinks/common', {
-                method: 'GET',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${_token}`
-                }
+            // const response = await fetch(baseURL + '/usefullinks/common', {
+            //     method: 'GET',
+            //     credentials: 'include',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //         'Authorization': `Bearer ${_token}`
+            //     }
+            // });
+             const response = await fetch(baseURL + '/usefullinks/common', {
+                method: 'GET'
             });
             const result = await response.json();
             dispatchLinks({

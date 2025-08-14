@@ -6,7 +6,7 @@ const NewsPage = function () {
  //   const baseURL = process.env.REACT_APP_SERVER_URI;
      const baseURL = "MyDataprovider"
     try {
-      const response = await fetch(baseURL + '/news', {
+      const response = await fetch(baseURL + '/newsapi', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

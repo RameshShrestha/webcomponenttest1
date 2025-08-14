@@ -73,13 +73,16 @@ export default function UserLocationContextProvider({ children }) {
            const baseURL = "MyDataprovider"
             try {
 
-                const response = await fetch(baseURL + `/weatherdata?lat=${lat}&lng=${lng}`, {
-                    method: 'GET',
-                    credentials: 'include',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${_token}`
-                    }
+                // const response = await fetch(baseURL + `/weatherdata?lat=${lat}&lng=${lng}`, {
+                //     method: 'GET',
+                //     credentials: 'include',
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //         'Authorization': `Bearer ${_token}`
+                //     }
+                // });
+                 const response = await fetch(baseURL + `/weatherdata?lat=${lat}&lng=${lng}`, {
+                    method: 'GET'
                 });
                 const result = await response.json();
                 _myLocalStorageUtility.setWeatherData(result);
